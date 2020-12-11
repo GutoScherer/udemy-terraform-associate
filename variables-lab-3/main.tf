@@ -1,21 +1,21 @@
 provider "aws" {
-  region = "us-east-1"
+  region = "sa-east-1"
 }
 
-resource "aws_instance" "test_instance" {
+resource "aws_instance" "variables_instance_1" {
   ami           = var.image_id
   instance_type = var.instance_type
   tags = {
-      Name = "test_instance_1"
+      Name = "variables_instance_1"
       environment = "test"
   }
 }
 
-resource "aws_instance" "test_instance_2" {
+resource "aws_instance" "variables_instance_2" {
   ami           = var.image_id
   instance_type = var.instance_type
   tags = {
-      Name = "test_instance_2"
+      Name = "variables_instance_2"
       environment = "test"
   }
 }

@@ -1,21 +1,21 @@
 provider "aws" {
-  region = "YOUR REGION"
+  region = "sa-east-1"
 }
 
-resource "aws_instance" "test_instance" {
-  ami           = "YOUR AMI"
-  instance_type = "t2.micro"
+resource "aws_instance" "variables_instance_1" {
+  ami           = var.ami
+  instance_type = var.instance_type
   tags = {
-      Name = "test_instance_1"
+      Name = "variables_instance_1"
       environment = "test"
   }
 }
 
-resource "aws_instance" "test_instance_2" {
-  ami           = "YOUR AMI"
-  instance_type = "t2.micro"
+resource "aws_instance" "variables_instance_2" {
+  ami           = var.ami
+  instance_type = var.instance_type
   tags = {
-      Name = "test_instance_2"
+      Name = "variables_instance_2"
       environment = "test"
   }
 }

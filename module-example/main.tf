@@ -1,5 +1,5 @@
 provider "aws" {
-    region = "YOUR AWS REGION"
+    region = "sa-east-1"
 }
 
 module prod_website {

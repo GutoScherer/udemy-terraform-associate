@@ -1,7 +1,9 @@
 #Provider block
 provider "aws" {
-    region = "YOUR REGION HERE"
+    region = "sa-east-1"
 }
 
 #EC2 Module Code
-
+module "import_instance" {
+    source = "./ec2-module"
+}

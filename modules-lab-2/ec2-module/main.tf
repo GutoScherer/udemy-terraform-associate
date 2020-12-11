@@ -23,5 +23,18 @@ data "aws_ami" "windows" {
 }
 
 #EBS Volume and Attachment
+resource "aws_ebs_volume" "example" {
+  availability_zone = var.availability_zone
+  size = 40
 
+  tags = {
+    Name = "Data Drive"
+  }
+}
+
+resource "aws_volume_attachment" "ebs_att" {
+  device_name = "/dev/sdh"
+  volume_id = aws_ebs_volume.example.id
+  instance_id = aws_instance.example.id
+}
 
